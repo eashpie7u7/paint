@@ -27,9 +27,12 @@ def circle(start, end):
     up()
     goto(start.x,end.y)
     radius=start.x-end.y
+    #el radio lo definí como la diferencia entre 
+    #start.x y end.y
     down()
     begin_fill()
     tur.circle(radius)
+    #usé la función de turtle para el radio
     end_fill()
 
 def rectangle(start, end):
@@ -40,7 +43,10 @@ def rectangle(start, end):
     begin_fill()
     for count in range(4):
         forward(end.x -start.y)
+        #a diferencia del cuadrado, uso las dos coordenadas
+        #x,y para el end.x y start.y para lados diferentes
         left(90)
+        #angulo de 90°
     end_fill()
 
 
@@ -50,11 +56,13 @@ def triangle(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
-
     for count in range(2):
+        #se eligió un range de 2 ya solo se trazan 2 lados
+        #y el siguiente es la unión
         forward(end.x - start.x)
-        left(60)
-
+        left(90)
+        #elegí hacer un triángulo rectángulo
+        #  su ángulo de rotación en left es de 90°
     end_fill()
 
 def tap(x, y):
@@ -80,6 +88,7 @@ listen()
 onkey(undo, 'u')
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('deeppink'), 'P')
+#se añadió un nuevo color, deeppink, aceptado por el módulo turtle
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
