@@ -27,6 +27,7 @@ def circle(start, end):
     up()
     goto(start.x,end.y)
     radius=start.x-end.y
+    down()
     begin_fill()
     tur.circle(radius)
     end_fill()
@@ -36,12 +37,11 @@ def rectangle(start, end):
     up()
     goto(start.x, start.y)
     down()
-    begin_fill
+    begin_fill()
     for count in range(4):
         forward(end.x -start.y)
         left(90)
-    
-    end_fill
+    end_fill()
 
 
 def triangle(start, end):
